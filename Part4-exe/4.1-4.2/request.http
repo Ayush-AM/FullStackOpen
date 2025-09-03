@@ -1,0 +1,29 @@
+### Get all blogs
+GET http://localhost:3003/api/blogs
+Accept: application/json
+
+### Create a new blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Test Blog",
+  "author": "Test Author",
+  "url": "https://test.com/blog",
+  "likes": 5
+}
+
+### Create another blog
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Another Blog",
+  "author": "Jane Smith",
+  "url": "https://another.com/blog",
+  "likes": 12
+}
+
+### Get all blogs again to verify
+GET http://localhost:3003/api/blogs
+Accept: application/json
