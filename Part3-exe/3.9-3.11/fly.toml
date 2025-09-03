@@ -1,0 +1,20 @@
+app = "your-unique-phonebook-backend-name"
+
+[[services]]
+  internal_port = 3001
+  protocol = "tcp"
+
+  [services.ports]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [services.ports]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [[services.http_checks]]
+    interval = 10000
+    timeout = 2000
+    method = "get"
+    path = "/api/persons"
